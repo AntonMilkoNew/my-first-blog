@@ -5,20 +5,15 @@
     <body>
         <div>
             <h1><a href="/">Django Girls Blog</a></h1>
-            <p>published: 29.06.2022, 12:14</p>
         </div>
 
-        <div>
+        {% for post in posts %}
+            <div>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>published: {{ post.published_date }}</p>
+            </div>
+        {% endfor %}
 
-            <h2><a href="">Мой первый пост</a></h2>
-            <p>Однажды, в суровую зимнтю пору, я из лесу вышел. Был сильный мороз.... </p>
-            <p>published: 29.06.2022, 12:14</p>
-        </div>
-
-        <div>
-            <h2><a href="">Мой второй пост</a></h2>
-            <p>У Лукоморья дуб спилили, кота на мясо завалили, златую цепь в ломбард снесли..... </p>
-            <p>published: 29.06.2022, 12:14</p>
-        </div>
     </body>
 </html>
